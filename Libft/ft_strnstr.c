@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 16:24:12 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/10/25 17:46:46 by daguiar-         ###   ########.fr       */
+/*   Created: 2022/10/25 17:00:26 by daguiar-          #+#    #+#             */
+/*   Updated: 2022/10/25 17:47:05 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_bzero(void *s, size_t n)
+char	*strnstr(const char *big, const char *little, size_t len)
 {
-	char	*p;
+	int	i;
+	int	j;
 
-	p = s;
-	while (n != 0)
+	i = 0;
+	j = 0;
+	if (!big || !little)
+		return (NULL);
+	while (big[i] != '\0' && i < len)
 	{
-		p = '\0';
-		p++;
-		n--;
+		j = 0;
+		while (big[i + j] == little[j]
+			&& i + j < len && big[i + j] && little[j])
+			j++;
+		if (little[j] == '\0')
+			return ((char *)big + i);
 	}
+	return (NULL);
 }
