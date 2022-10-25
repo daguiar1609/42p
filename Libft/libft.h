@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:25:51 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/10/24 19:04:04 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/10/25 16:33:47 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,7 @@ int		ft_toupper(int c);
 char	*strrchr(const char *s, int c);
 
 char	*strchr(const char *s, int c);
+
+int		strncmp(const char *s1, const char *s2, size_t n);
 
 #endif
