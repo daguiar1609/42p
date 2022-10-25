@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:40:20 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/10/25 18:49:46 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/10/25 18:52:54 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int i;
-	int r;
-	int s;
+	int	i;
+	int	r;
+	int	s;
 
 	i = 0;
 	r = 0;
@@ -25,7 +25,7 @@ int	ft_atoi(const char *nptr)
 	if (nptr[i] == '-')
 		s = -1;
 		i++;
-	while(nptr[i] >= 48 && nptr[i] <= 57)
+	while (nptr[i] >= 48 && nptr[i] <= 57)
 	{
 		r = (r * 10) + (nptr[i] - 48);
 		i++;
