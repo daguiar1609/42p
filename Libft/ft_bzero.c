@@ -6,11 +6,11 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:24:12 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/10/24 18:54:48 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/10/25 15:50:43 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_bzero(void *s, size_t n)
 {
