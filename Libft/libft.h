@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:25:51 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/10/28 18:46:20 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/10/28 19:05:42 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,10 @@ size_t	ft_strlcat(char *dst, char *src, size_t size);
 
 void	*ft_memmove(void *dest, const void *src, size_t n);
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+
+void	*ft_memchr(const void *s, int c, size_t n);
+
+char	*ft_strdup(const char *s);
 
 #endif
