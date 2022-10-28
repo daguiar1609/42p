@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:25:51 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/10/28 16:12:31 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/10/28 17:30:53 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,7 @@ int		ft_atoi(const char *nptr);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 void	*ft_calloc(size_t nmemb, size_t size);
+
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 #endif

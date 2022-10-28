@@ -6,12 +6,12 @@
 #    By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/28 13:53:30 by daguiar-          #+#    #+#              #
-#    Updated: 2022/10/28 16:11:26 by daguiar-         ###   ########.fr        #
+#    Updated: 2022/10/28 17:31:00 by daguiar-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRCS			=	ft_isalnum.c ft_isprint.c ft_calloc.c \
+SRCS			=	ft_isalnum.c ft_isprint.c ft_calloc.c ft_memcpy.c \
 					ft_strncmp.c ft_atoi.c ft_isalpha.c \
 					ft_strchr.c  ft_strlcpy.c \
 					ft_strnstr.c ft_tolower.c ft_bzero.c  ft_isascii.c \
