@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:25:51 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/10/25 16:33:47 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/10/28 16:12:31 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,24 @@ size_t	ft_strlen(const char *s);
 
 void	*ft_memset(void *s, int c, size_t n);
 
-void	*ft_bzero(void *s, size_t n);
+void	ft_bzero(void *s, size_t n);
 
 int		ft_tolower(int c);
 
 int		ft_toupper(int c);
 
-char	*strrchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
 
-char	*strchr(const char *s, int c);
+char	*ft_strchr(const char *s, int c);
 
-int		strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+
+int		ft_atoi(const char *nptr);
+
+char	*ft_strnstr(const char *big, const char *little, size_t len);
+
+void	*ft_calloc(size_t nmemb, size_t size);
 
 #endif

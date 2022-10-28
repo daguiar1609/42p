@@ -6,24 +6,26 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:40:40 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/10/24 18:57:31 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/10/28 14:13:53 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strchr(const char *s, int c)
+#include "libft.h"
+
+char	*ft_strchr(const char *s, int c)
 {
-	char	*p;
 	int		i;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
-		{
-			*p = c;
-			return (p);
-		}
+		if (s[i] == (char)c)
+			return ((char *)(s + i));
 		i++;
 	}
-	return (0);
+	if (s[i] == (char)c)
+		return ((char *)(s + i));
+	return (NULL);
 }
