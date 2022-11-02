@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:25:51 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/11/02 17:05:53 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/11/02 18:13:17 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,11 @@ char	*ft_strdup(const char *s);
 char	*ft_strjoin(const char *s1, const char *s2);
 
 char	*ft_substr(const char *s, unsigned int start, size_t len);
+
+void	ft_putchar_fd(char c, int fd);
+
+void	ft_putstr_fd(char *s, int fd);
+
+void	ft_putendl_fd(char *s, int fd);
 
 #endif
