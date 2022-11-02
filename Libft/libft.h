@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:25:51 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/10/28 19:05:42 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/11/02 17:05:53 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,9 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 
 char	*ft_strdup(const char *s);
+
+char	*ft_strjoin(const char *s1, const char *s2);
+
+char	*ft_substr(const char *s, unsigned int start, size_t len);
 
 #endif
