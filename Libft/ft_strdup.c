@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 19:00:26 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/10/28 19:06:18 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/11/02 15:50:59 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strdup(const char *s)
 	char	*nstr;
 	int		i;
 
-	if (!s)
-		return (NULL);
 	nstr = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!nstr)
 		return (NULL);
