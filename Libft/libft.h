@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:25:51 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/11/07 15:15:02 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/11/07 16:09:45 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 
 void	ft_putnbr_fd(int n, int fd);
+
+char	*ft_strtrim(char const *s1, char const *set);
 
 #endif
