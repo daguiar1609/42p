@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:22:21 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/11/07 15:28:25 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/11/10 16:24:37 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,4 @@ void	ft_putnbr_fd(int n, int fd)
 		else
 			ft_putchar_fd(n + 48, fd);
 	}
-}
-
-int main(void)
-{
-	ft_putnbr_fd(65468, 1);
 }
