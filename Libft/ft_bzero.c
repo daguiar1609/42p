@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:24:12 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/10/28 14:31:16 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/11/14 17:13:15 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char	*p;
 	size_t	i;
 
 	i = 0;
-	p = (char *)s;
 	while (i < n)
 	{
-		p[i] = '\0';
+		((char *)s)[i] = '\0';
 		i++;
 	}
 }
