@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:25:25 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/11/02 14:03:53 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/11/10 18:32:41 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	else
 	{
-		i = 0;
-		while (i < (int)n)
-		{
-			*(char *)(dest + i) = *(char *)(src + i);
-			i++;
-		}
+		ft_memcpy(dest, src, n);
 	}
 	return (dest);
 }
