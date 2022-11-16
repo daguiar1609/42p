@@ -4,7 +4,7 @@
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*                                                +#+#+#+#+#+   +#+           */ 
 /*   Created: 2022/11/14 15:02:50 by daguiar-          #+#    #+#             */
 /*   Updated: 2022/11/14 16:10:48 by daguiar-         ###   ########.fr       */
 /*                                                                            */
@@ -12,45 +12,62 @@
 
 #include "libft.h"
 
-int	spaces(char *s, int i, char c)
+int	tampalavra(char *s, int i, char c)
 {
-	while ((s[i] >= 9 && s[i] <= 13) || s[i] == 32 || s[i] == c)
+	int t;
+
+	t = 0;
+	while (s[i] != c && s[i])
+	{
+		t++;
 		i++;
-	return (i);
+	}
+	return (t);
 }
 
-int	count(char *s, int i, char c, int j)
+int	contapal(char *s, char c)
 {
-	while (s[i + j] != c)
-		j++;
+	int	i;
+	int	isWord;
+
+	i = 0;
+	isWord = 0;
+	while (*s)
+	{
+		if (*s != c && isWord == 0)
+		{
+			isWord = 1;
+			i++;
+		}
+		else if (*s == c)
+			isWord = 0;
+		s++;
+	}
+	return(i);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
-	int		k;
-	int		l;
+	int		tampal;
+	int		tamstr;
 	char	**dst;
 
 	i = 0;
-	j = 0;
-	while (s[i] == '\0')
+	j = -1;
+	tampal = contapal(s, c);
+	dst = malloc((tampal + 1) * sizeof(char *));
+	if (!dst)
+		return (NULL);
+	while (++j > tampal)
 	{
-		l = 0;
-		i = spaces(s, i, c);
-		j = count(s, i, c, j);
-		*dst[i] = malloc(j + 1);
-		if (!dst)
-			return (NULL);
-		k = i - j;
-		j = 0;
-		while (s[k] != c)
-		{
-			dst[j][l] = s[k];
-			k++;
-			l++;
-		}
+		while (s[i] == c)
+			i++;
+		tamstr = tampalavra(s, i, c);
+		dst[j] = ft_substr(s, i, tamstr);
+		i += tamstr;
 	}
+	dst[j] = NULL;
 	return (dst);
 }
