@@ -6,14 +6,14 @@
 #    By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/28 13:53:30 by daguiar-          #+#    #+#              #
-#    Updated: 2022/11/10 14:30:08 by daguiar-         ###   ########.fr        #
+#    Updated: 2022/11/17 23:06:10 by daguiar-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 SRCS			=	ft_isalnum.c ft_isprint.c ft_calloc.c ft_memcpy.c ft_strmapi.c\
 					ft_strncmp.c ft_atoi.c ft_isalpha.c ft_strlcat.c ft_putnbr_fd.c \
-					ft_strchr.c  ft_strlcpy.c ft_memchr.c ft_substr.c ft_strjoin.c \
+					ft_strchr.c  ft_strlcpy.c ft_memchr.c ft_substr.c ft_strjoin.c ft_split.c \
 					ft_strnstr.c ft_tolower.c ft_bzero.c  ft_isascii.c ft_putendl_fd.c ft_itoa.c\
 					ft_strlen.c  ft_strrchr.c ft_memcmp.c ft_strdup.c ft_putstr_fd.c ft_striteri.c \
 					ft_toupper.c ft_isdigit.c ft_memset.c ft_memmove.c ft_putchar_fd.c ft_strtrim.c
