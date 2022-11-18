@@ -11,35 +11,31 @@
 # **************************************************************************** #
 
 
-SRCS			=	ft_isalnum.c ft_isprint.c ft_calloc.c ft_memcpy.c ft_strmapi.c\
-					ft_strncmp.c ft_atoi.c ft_isalpha.c ft_strlcat.c ft_putnbr_fd.c \
-					ft_strchr.c  ft_strlcpy.c ft_memchr.c ft_substr.c ft_strjoin.c ft_split.c \
-					ft_strnstr.c ft_tolower.c ft_bzero.c  ft_isascii.c ft_putendl_fd.c ft_itoa.c\
-					ft_strlen.c  ft_strrchr.c ft_memcmp.c ft_strdup.c ft_putstr_fd.c ft_striteri.c \
-					ft_toupper.c ft_isdigit.c ft_memset.c ft_memmove.c ft_putchar_fd.c ft_strtrim.c
-					
-OBJS			= $(SRCS:.c=.o)
+NAME = libft.a
+SRC = ft_memset ft_bzero ft_memcpy ft_memmove ft_memchr\
+ft_memcmp ft_strlen ft_strlcpy ft_strlcat ft_strchr ft_strrchr\
+ft_strncmp ft_atoi ft_isalpha ft_isdigit ft_isalnum\
+ft_isascii ft_isprint ft_toupper ft_tolower ft_calloc ft_strdup\
+ft_putstr_fd ft_putendl_fd ft_putchar_fd ft_putnbr_fd ft_strnstr\
+ft_itoa ft_substr ft_strjoin ft_strtrim ft_strmapi ft_striteri\
+ft_split\
 
-CC				= gcc
-RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -I.
+BONUS = ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast\
+ft_lstadd_back ft_lstdelone ft_lstclear ft_lstiter ft_lstmap\
 
-NAME			= libft.a
 
-all:			$(NAME)
+CC =gcc
+RM =rm -f
+CFLAGS = -Wall -Werror -Wextra -I.
 
-$(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS)
+all:$(NAME)
 
+$(NAME): $(SRC:=.o)
+			ar rc $(NAME) $(SRC:=.o)
 clean:
-				$(RM) $(OBJS) $(BONUS_OBJS)
-
-fclean:			clean
-				$(RM) $(NAME)
-
-re:				fclean $(NAME)
-
-bonus:			$(OBJS) $(BONUS_OBJS)
-				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
-
-.PHONY:			all clean fclean re bonus
+	$(RM)	$(SRC:=.o) $(BONUS:=.o)
+fclean: clean
+		$(RM)	$(NAME)
+re:	fclean	$(NAME)
+bonus:	$(SRC:=.o)	$(BONUS:=.o)
+		ar rc $(NAME) $(SRC:=.o)	$(BONUS:=.o)
