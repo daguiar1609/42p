@@ -6,7 +6,7 @@
 #    By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/28 13:53:30 by daguiar-          #+#    #+#              #
-#    Updated: 2022/11/17 23:06:10 by daguiar-         ###   ########.fr        #
+#    Updated: 2022/11/21 16:36:16 by daguiar-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ ft_itoa ft_substr ft_strjoin ft_strtrim ft_strmapi ft_striteri\
 ft_split\
 
 BONUS = ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast\
-ft_lstadd_back ft_lstdelone ft_lstclear ft_lstiter ft_lstmap\
+ft_lstadd_back ft_lstdelone ft_lstclear ft_lstiter\
 
 
 CC =gcc
