@@ -21,7 +21,7 @@ ft_itoa ft_substr ft_strjoin ft_strtrim ft_strmapi ft_striteri\
 ft_split\
 
 BONUS = ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast\
-ft_lstadd_back ft_lstdelone ft_lstclear ft_lstiter\
+ft_lstadd_back ft_lstdelone ft_lstclear ft_lstiter ft_lstmap\
 
 
 CC =gcc
