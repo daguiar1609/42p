@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:08:07 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/11/21 23:46:48 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/11/21 23:58:19 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ size_t	ft_strlcat(char *dst, char *src, size_t size)
 	size_t	srclen;
 	size_t	dstlen;
 
-	srclen = ft_srclen(src);
-	dstlen = ft_srclen(dst);
+	srclen = ft_strlen(src);
+	dstlen = ft_strlen(dst);
 	j = dstlen;
 	i = 0;
 	if (dstlen < size - 1 && size > 0)
