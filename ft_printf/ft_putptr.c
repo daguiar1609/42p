@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puts.c                                          :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/24 12:52:14 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/11/28 15:05:39 by daguiar-         ###   ########.fr       */
+/*   Created: 2022/11/28 16:57:16 by daguiar-          #+#    #+#             */
+/*   Updated: 2022/11/28 16:58:52 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	putchar(char c)
+void	ft_putptr(void *ptr)
 {
-	return (write(1, &c, 1));
-}
-
-int	putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != NULL)
-		write(1, str[i++], 1);
-	return (i);
+	
 }

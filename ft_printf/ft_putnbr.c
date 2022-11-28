@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/24 12:06:15 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/11/28 17:24:39 by daguiar-         ###   ########.fr       */
+/*   Created: 2022/11/28 17:15:02 by daguiar-          #+#    #+#             */
+/*   Updated: 2022/11/28 18:25:50 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#include "libftprintf.h"
 
-# include <stdlib.h>
-# include <stdarg.h>
-# include <unistd.h>
-# include <stdio.h>
+void	ft_putnbr(int nbr)
+{
+	char	c;
 
-void	ft_putchar(int c);
-void	ft_putstr(char *str);
-void	ft_putnbr(int nbr);
-int		ft_printf(const char *str, ...);
-
-#endif
+	if (nbr < 10 && nbr >= 0)
+	{
+		c = nbr + 48;
+		write(1, &c, 1);
+	}
+	else if (nbr >= 10)
+	{
+		while (nbr > 0)
+		{
+			ft_putnbr(nbr % 10);
+			nbr /= 10;
+		}
+	}
+}
