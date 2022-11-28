@@ -6,11 +6,11 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 12:05:56 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/11/24 12:52:31 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/11/24 18:15:03 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libftprintf.h"
 
 int	ft_printf(const char *str, ...)
 {

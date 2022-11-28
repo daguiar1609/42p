@@ -6,11 +6,11 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 12:52:14 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/11/24 12:55:47 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/11/28 15:05:39 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libftprintf.h"
 
 int	putchar(char c)
 {
@@ -19,5 +19,10 @@ int	putchar(char c)
 
 int	putstr(char *str)
 {
-	
+	int	i;
+
+	i = 0;
+	while (str[i] != NULL)
+		write(1, str[i++], 1);
+	return (i);
 }
