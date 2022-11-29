@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 12:05:56 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/11/28 18:00:55 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/11/29 16:25:06 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int	ft_printf(const char *str, ...)
 				ft_putnbr(va_arg(arg, int));
 			else if (str[i] == '%')
 				ft_putchar('%');
-			
 			i++;
 		}
 		ft_putchar(str[i]);
@@ -44,6 +43,6 @@ int	ft_printf(const char *str, ...)
 
 int	main()
 {
-	ft_printf("%d\n", 25);
-	printf("%d", 25);
+	ft_printf("%d\n", 54654);
+	printf("%d", INT_MIN);
 }

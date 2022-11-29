@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 12:06:15 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/11/28 17:24:39 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/11/29 15:55:22 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdio.h>
+# include <limits.h>
 
 void	ft_putchar(int c);
 void	ft_putstr(char *str);
