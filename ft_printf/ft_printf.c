@@ -6,11 +6,25 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 12:05:56 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/11/29 16:25:06 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/11/29 17:17:41 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+
+void	check_params(char c, va_list arg)
+{
+	if (c == 'c')
+		ft_putchar(va_arg(arg, int));
+	else if (c == 's')
+		ft_putstr(va_arg(arg, char *));
+	/*else if (str[i] == 'p')
+		ft_putptr(va_arg(arg, void *));*/
+	else if (c == 'd' || c == 'i')
+		ft_putnbr(va_arg(arg, int));
+	else if (c == '%')
+		ft_putchar('%');
+}
 
 int	ft_printf(const char *str, ...)
 {
@@ -24,16 +38,7 @@ int	ft_printf(const char *str, ...)
 		if (str[i] == '%')
 		{
 			i++;
-			if (str[i] == 'c')
-				ft_putchar(va_arg(arg, int));
-			else if (str[i] == 's')
-				ft_putstr(va_arg(arg, char *));
-			/*else if (str[i] == 'p')
-				ft_putptr(va_arg(arg, void *));*/
-			else if (str[i] == 'd')
-				ft_putnbr(va_arg(arg, int));
-			else if (str[i] == '%')
-				ft_putchar('%');
+			check_params(str[i], arg);
 			i++;
 		}
 		ft_putchar(str[i]);
