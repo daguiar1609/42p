@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 12:06:15 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/11/29 15:55:22 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/12/06 15:41:50 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 # include <stdio.h>
 # include <limits.h>
 
-void	ft_putchar(int c);
-void	ft_putstr(char *str);
-void	ft_putnbr(int nbr);
+void	ft_putchar(int c, int *len);
+void	ft_putstr(char *str, int *len);
+void	ft_putnbr(int nbr, int *len);
 int		ft_printf(const char *str, ...);
 
 #endif
