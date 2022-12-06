@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 12:05:56 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/12/06 15:43:53 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/12/06 17:38:45 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ int	check_params(char c, va_list arg, int *len)
 		ft_putptr(va_arg(arg, void *));*/
 	else if (c == 'd' || c == 'i')
 		ft_putnbr(va_arg(arg, int), len);
+	else if (c == 'x')
+		ft_puthex(va_arg(arg, int), len, 0);
+	else if (c == 'X')
+		ft_puthex(va_arg(arg, int), len, 1);
 	else if (c == '%')
 		ft_putchar('%', len);
 }
@@ -51,6 +55,6 @@ int	ft_printf(const char *str, ...)
 
 int	main()
 {
-	ft_printf("%d\n", ft_printf("%s\n", "123"));
-	printf("%d\n", printf("%d\n", 123));
+	ft_printf("%x\n", 518335487935);
+	printf("%x\n", 518335487935);
 }
