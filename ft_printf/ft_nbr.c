@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 17:15:02 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/12/07 13:56:05 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/12/07 14:27:39 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_putint(int nbr, int *len)
 	{
 		nbr *= -1;
 		ft_putchar('-', len);
-		ft_putint(nbr / 10, len);
+		ft_putint(nbr, len);
 	}
 	else if (nbr >= 10)
 	{
@@ -63,9 +63,7 @@ void	ft_putint(int nbr, int *len)
 		ft_putint(nbr % 10, len);
 	}
 	else
-	{
 		ft_putchar(nbr + 48, len);
-	}
 }
 
 void	ft_putunsint(unsigned int nbr, int *len)
@@ -76,9 +74,7 @@ void	ft_putunsint(unsigned int nbr, int *len)
 		ft_putunsint(nbr % 10, len);
 	}
 	else
-	{
 		ft_putchar(nbr + 48, len);
-	}
 }
 
 void	ft_putptr(unsigned long *ptr, int *len)
@@ -87,10 +83,10 @@ void	ft_putptr(unsigned long *ptr, int *len)
 
 	add = (unsigned long int)ptr;
 	if (add == 0)
-	{
 		ft_putstr("(nil)", len);
-		return ;
+	else
+	{
+		ft_putstr("0x", len);
+		ft_puthexptr(add, len);
 	}
-	ft_putstr("0x", len);
-	ft_puthexptr(add, len);
 }

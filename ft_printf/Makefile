@@ -17,7 +17,5 @@ clean:
 fclean: clean
 		$(RM)	$(NAME)
 re:	fclean	$(NAME)
-bonus:	$(SRC:=.o)
-		ar rc $(NAME) $(SRC:=.o)
 
 .PHONY: all clean fclean re bonus

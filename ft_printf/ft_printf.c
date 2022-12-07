@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 12:05:56 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/12/07 13:56:00 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/12/07 14:28:20 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ int	ft_printf(const char *str, ...)
 			check_params(str[i], arg, &len);
 			i++;
 		}
-		ft_putchar(str[i], &len);
-		i++;
+		else
+			ft_putchar(str[i++], &len);
 	}
 	return (len);
 }
