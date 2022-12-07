@@ -6,13 +6,13 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 17:15:02 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/12/06 15:42:48 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/12/07 11:35:35 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_putnbr(int nbr, int *len)
+void	ft_putint(int nbr, int *len)
 {
 	if (nbr == INT_MIN)
 	{
@@ -29,7 +29,20 @@ void	ft_putnbr(int nbr, int *len)
 		ft_putnbr(nbr / 10, len);
 		ft_putnbr(nbr % 10, len);
 	}
-	else 
+	else
+	{
+		ft_putchar(nbr + 48, len);
+	}
+}
+
+void	ft_putunsint(unsigned int nbr, int *len)
+{
+	if (nbr >= 10)
+	{
+		ft_putunsint(nbr / 10, len);
+		ft_putunsint(nbr % 10, len);
+	}
+	else
 	{
 		ft_putchar(nbr + 48, len);
 	}

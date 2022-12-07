@@ -6,9 +6,10 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 12:05:56 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/12/06 17:38:45 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/12/07 11:45:56 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "libftprintf.h"
 
@@ -26,6 +27,8 @@ int	check_params(char c, va_list arg, int *len)
 		ft_puthex(va_arg(arg, int), len, 0);
 	else if (c == 'X')
 		ft_puthex(va_arg(arg, int), len, 1);
+	else if (c == 'u')
+		ft_putunsint(va_arg(arg, unsigned int), len);
 	else if (c == '%')
 		ft_putchar('%', len);
 }
@@ -55,6 +58,6 @@ int	ft_printf(const char *str, ...)
 
 int	main()
 {
-	ft_printf("%x\n", 518335487935);
-	printf("%x\n", 518335487935);
+	ft_printf("%u\n", 518335487935);
+	printf("%u\n", 518335487935);
 }
