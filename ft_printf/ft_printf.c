@@ -6,23 +6,22 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 12:05:56 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/12/07 11:45:56 by daguiar-         ###   ########.fr       */
+/*   Updated: 2022/12/07 13:56:00 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
 
-#include "libftprintf.h"
-
-int	check_params(char c, va_list arg, int *len)
+void	check_params(char c, va_list arg, int *len)
 {
 	if (c == 'c')
 		ft_putchar(va_arg(arg, int), len);
 	else if (c == 's')
 		ft_putstr(va_arg(arg, char *), len);
-	/*else if (str[i] == 'p')
-		ft_putptr(va_arg(arg, void *));*/
+	else if (c == 'p')
+		ft_putptr(va_arg(arg, void *), len);
 	else if (c == 'd' || c == 'i')
-		ft_putnbr(va_arg(arg, int), len);
+		ft_putint(va_arg(arg, int), len);
 	else if (c == 'x')
 		ft_puthex(va_arg(arg, int), len, 0);
 	else if (c == 'X')
@@ -54,10 +53,4 @@ int	ft_printf(const char *str, ...)
 		i++;
 	}
 	return (len);
-}
-
-int	main()
-{
-	ft_printf("%u\n", 518335487935);
-	printf("%u\n", 518335487935);
 }
