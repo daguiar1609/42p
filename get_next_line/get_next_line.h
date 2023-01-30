@@ -17,7 +17,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <limits.h>
 
 char	*ft_strjoin(const char *s1, const char *s2);
 char	*get_next_line(int fd);
