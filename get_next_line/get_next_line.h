@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 16:54:15 by daguiar-          #+#    #+#             */
-/*   Updated: 2023/02/10 16:17:48 by daguiar-         ###   ########.fr       */
+/*   Updated: 2023/02/10 17:11:19 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@
 # include <limits.h>
 
 char	*ft_strjoin(const char *s1, const char *s2);
+char	*get_next_line(int fd);
 
 #endif
