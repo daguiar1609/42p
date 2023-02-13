@@ -26,9 +26,11 @@ char	*get_next_line(int fd)
 		return (NULL);
 	}
 	save = NULL;
-	while (read(fd, buff, BUFFER_SIZE) > 0)
+	while (buff[0] || read(fd, buff, BUFFER_SIZE) > 0)
 	{
 		save = ft_strjoin(save, buff);
+		if (no_overwrite(buff))
+			break ;
 	}
 	return (save);
 }
