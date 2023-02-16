@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 16:54:15 by daguiar-          #+#    #+#             */
-/*   Updated: 2023/02/15 15:40:08 by daguiar-         ###   ########.fr       */
+/*   Updated: 2023/02/16 18:31:52 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdbool.h>
-# include <fcntl.h>
 # include <stdio.h>
 
 char	*ft_strjoin(char *s1, char *s2);
