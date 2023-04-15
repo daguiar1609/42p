@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_str.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 15:54:08 by daguiar-          #+#    #+#             */
-/*   Updated: 2023/04/11 16:02:01 by daguiar-         ###   ########.fr       */
+/*   Created: 2022/11/28 16:25:08 by daguiar-          #+#    #+#             */
+/*   Updated: 2022/12/07 14:13:14 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <mlx.h>
+#include "ft_printf.h"
 
-int	main(int ac, char **av)
+void	ft_putchar(int c, int *len)
 {
-	void	*mlx;
+	(*len) += write(1, &c, 1);
+}
 
-	mlx = mlx_init();
+void	ft_putstr(char *str, int *len)
+{
+	int	i;
+
+	i = 0;
+	if (!str)
+		*len += write(1, "(null)", 6);
+	else
+		while (str[i])
+			ft_putchar(str[i++], len);
 }
