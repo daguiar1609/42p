@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 16:54:15 by daguiar-          #+#    #+#             */
-/*   Updated: 2023/02/17 15:22:20 by daguiar-         ###   ########.fr       */
+/*   Updated: 2023/04/15 19:39:38 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
+#  define BUFFER_SIZE 125
 # endif
 
 # include <unistd.h>
