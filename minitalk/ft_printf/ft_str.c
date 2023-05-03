@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_str.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 14:59:07 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/10/24 15:06:35 by daguiar-         ###   ########.fr       */
+/*   Created: 2022/11/28 16:25:08 by daguiar-          #+#    #+#             */
+/*   Updated: 2022/12/07 14:13:14 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "ft_printf.h"
+
+void	ft_putchar(int c, int *len)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	(*len) += write(1, &c, 1);
+}
+
+void	ft_putstr(char *str, int *len)
+{
+	int	i;
+
+	i = 0;
+	if (!str)
+		*len += write(1, "(null)", 6);
+	else
+		while (str[i])
+			ft_putchar(str[i++], len);
 }

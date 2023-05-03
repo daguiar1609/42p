@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 12:38:14 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/10/24 14:56:00 by daguiar-         ###   ########.fr       */
+/*   Created: 2023/05/03 14:42:23 by daguiar-          #+#    #+#             */
+/*   Updated: 2023/05/03 15:14:19 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
-{
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	return (0);
-}
+#ifndef MINITALK_H
+# define MINITALK_H
+
+# include "../ft_printf/ft_printf.h"
+# include <signal.h>
+
+#endif

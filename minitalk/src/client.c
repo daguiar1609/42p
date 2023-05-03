@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 18:40:20 by daguiar-          #+#    #+#             */
-/*   Updated: 2022/10/28 15:40:15 by daguiar-         ###   ########.fr       */
+/*   Created: 2023/04/26 14:13:22 by daguiar-          #+#    #+#             */
+/*   Updated: 2023/05/03 15:13:52 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "libft.h"
+#include "../include/minitalk.h"
 
 int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	r;
-	int	s;
+	int					i;
+	unsigned long int	r;
+	int					s;
 
 	i = 0;
 	r = 0;
@@ -38,4 +37,40 @@ int	ft_atoi(const char *nptr)
 		i++;
 	}
 	return (r * s);
+}
+
+void	atob(int pid, char c)
+{
+	int	bit;
+
+	bit = 0;
+	while (bit < 8)
+	{
+		if ((c & (0x01 << bit)))
+			kill(pid, SIGUSR1);
+		else
+			kill(pid, SIGUSR2);
+		usleep(500);
+		bit++;
+	}
+}
+
+int	main(int ac, char **av)
+{
+	int	pid;
+	int	i;
+
+	i = 0;
+	if (ac == 3)
+	{
+		pid = ft_atoi(av[1]);
+		while (av[2][i] != '\0')
+			atob(pid, av[2][i++]);
+	}
+	else
+	{
+		ft_printf("Erro\n");
+		return (1);
+	}
+	return (0);
 }
