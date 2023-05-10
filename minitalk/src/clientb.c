@@ -6,17 +6,11 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:13:22 by daguiar-          #+#    #+#             */
-/*   Updated: 2023/05/10 11:56:45 by daguiar-         ###   ########.fr       */
+/*   Updated: 2023/05/10 11:14:41 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/minitalk.h"
-
-void	confirm_msg(int signal)
-{
-	if (signal == SIGUSR2)
-		ft_printf("Message Received!\n");
-}
 
 void	atob(int pid, char c)
 {
@@ -44,16 +38,11 @@ int	main(int ac, char **av)
 	{
 		pid = ft_atoi(av[1]);
 		while (av[2][i] != '\0')
-		{
-			atob(pid, av[2][i]);
-			i++;
-		}
-		signal(SIGUSR2, confirm_msg);
-		atob(pid, '\0');
+			atob(pid, av[2][i++]);
 	}
 	else
 	{
-		ft_printf("Error\nUsage: ./client <pid> <message to send>\n");
+		ft_printf("Error\n");
 		return (1);
 	}
 	return (0);
