@@ -43,8 +43,8 @@ fclean: clean
 	@make clean -C Libft
 	$(RM)	$(NAMEC)
 	$(RM)	$(NAMES)
-	$(RM)	$(PRINTF)
-	$(RM)	$(LIBFT)
+	$(RM)	ft_printf/$(PRINTF)
+	$(RM)	Libft/$(LIBFT)
 
 re:	fclean	all
 
