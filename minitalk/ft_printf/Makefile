@@ -13,9 +13,9 @@ all:$(NAME)
 $(NAME): $(SRC:=.o)
 			ar rc $(NAME) $(SRC:=.o)
 clean:
-	$(RM)	$(SRC:=.o)
+	@$(RM)	$(SRC:=.o)
 fclean: clean
-		$(RM)	$(NAME)
+	@$(RM)	$(NAME)
 re:	fclean	$(NAME)
 
 .PHONY: all clean fclean re bonus
