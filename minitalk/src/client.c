@@ -6,30 +6,32 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:13:22 by daguiar-          #+#    #+#             */
-/*   Updated: 2023/05/10 11:56:45 by daguiar-         ###   ########.fr       */
+/*   Updated: 2023/06/01 11:10:46 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/minitalk.h"
 
-void	confirm_msg(int signal)
+static void	confirm(int signal)
 {
-	if (signal == SIGUSR2)
-		ft_printf("Message Received!\n");
+	if (signal == SIGUSR1)
+		ft_printf("\033[0;32mReceived!\033[0;32m\n", 1);
+	else
+		ft_printf("\033[0;32mReceived!\033[0;32m\n", 1);
 }
 
-void	atob(int pid, char c)
+void	send_bits(int pid, char c)
 {
-	int	bit;
+	int		bit;
 
 	bit = 0;
 	while (bit < 8)
 	{
-		if ((c & (0x01 << bit)))
+		if ((c & (0x01 << bit)) != 0)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		usleep(500);
+		usleep(100);
 		bit++;
 	}
 }
@@ -45,15 +47,16 @@ int	main(int ac, char **av)
 		pid = ft_atoi(av[1]);
 		while (av[2][i] != '\0')
 		{
-			atob(pid, av[2][i]);
+			signal(SIGUSR1, confirm);
+			signal(SIGUSR2, confirm);
+			send_bits(pid, av[2][i]);
 			i++;
 		}
-		signal(SIGUSR2, confirm_msg);
-		atob(pid, '\0');
+		send_bits(pid, '\n');
 	}
 	else
 	{
-		ft_printf("Error\nUsage: ./client <pid> <message to send>\n");
+		ft_printf("ERROR\nUsage: ./client <Server PID> <Message to send>");
 		return (1);
 	}
 	return (0);
