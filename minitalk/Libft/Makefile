@@ -12,7 +12,7 @@
 
 
 NAME = libft.a
-SRC = ft_atoi
+SRC = ft_atoi ft_isdigit
 
 
 CC =gcc

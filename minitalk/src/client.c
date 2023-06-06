@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:13:22 by daguiar-          #+#    #+#             */
-/*   Updated: 2023/06/01 11:10:46 by daguiar-         ###   ########.fr       */
+/*   Updated: 2023/06/05 15:19:45 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,23 +36,36 @@ void	send_bits(int pid, char c)
 	}
 }
 
-int	main(int ac, char **av)
+int	pid_check(char *pid)
 {
-	int	pid;
 	int	i;
 
 	i = 0;
+	while (pid[i])
+		if (!ft_isdigit(pid[i++]))
+			return (0);
+	return (1);
+}
+
+int	main(int ac, char **av)
+{
+	int	i;
+
+	if (!pid_check(av[1]))
+	{
+		ft_printf("Invalid PID.\n");
+		return (1);
+	}
+	i = 0;
 	if (ac == 3)
 	{
-		pid = ft_atoi(av[1]);
 		while (av[2][i] != '\0')
 		{
 			signal(SIGUSR1, confirm);
 			signal(SIGUSR2, confirm);
-			send_bits(pid, av[2][i]);
-			i++;
+			send_bits(ft_atoi(av[1]), av[2][i++]);
 		}
-		send_bits(pid, '\n');
+		send_bits(ft_atoi(av[1]), '\n');
 	}
 	else
 	{

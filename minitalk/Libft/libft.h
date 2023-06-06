@@ -18,5 +18,6 @@
 # include <limits.h>
 
 int		ft_atoi(const char *nptr);
+int		ft_isdigit(int c);
 
 #endif

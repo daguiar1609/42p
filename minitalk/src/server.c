@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:19:30 by daguiar-          #+#    #+#             */
-/*   Updated: 2023/06/01 11:07:31 by daguiar-         ###   ########.fr       */
+/*   Updated: 2023/06/05 14:23:41 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ static void	action(int signal, siginfo_t *info, void *context)
 	static int	bit;
 	static int	i;
 
-	(void)info;
 	(void)context;
 	if (signal == SIGUSR1)
 		i |= (0x01 << bit);
