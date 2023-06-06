@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:04:08 by daguiar-          #+#    #+#             */
-/*   Updated: 2023/05/26 15:57:09 by daguiar-         ###   ########.fr       */
+/*   Updated: 2023/06/05 17:40:59 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,11 +88,11 @@ int	int_limits(int ac, char **av)
 void	errors_handler(int ac, char **av)
 {
 	if (!duplicated_numbers(ac, av))
-		exit(write(1, "Duplicated numbers not allowed!", 31));
+		exit(write(2, "Duplicated numbers not allowed!", 31));
 	if (!valid_numbers(ac, av))
-		exit(write(1, "Something other than numbers or - inserted!", 43));
+		exit(write(2, "Something other than numbers or - inserted!", 43));
 	if (!minus_check(ac, av))
-		exit(write(1, "Too many/only/wrongly placed minus inserted!", 44));
+		exit(write(2, "Too many/only/wrongly placed minus inserted!", 44));
 	if (!int_limits(ac, av))
-		exit(write(1, "Number/s bigger or smaller than int limts!", 42));
+		exit(write(2, "Number/s bigger or smaller than int limts!", 42));
 }

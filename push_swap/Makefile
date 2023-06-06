@@ -19,7 +19,7 @@ OBJ = $(SRC_FILES:.c=.o)
 
 CC = cc
 RM = rm -f
-CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address
 INCLUDE = -I include
 
 all:$(NAME)
