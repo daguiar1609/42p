@@ -25,22 +25,40 @@ INCLUDE = -I include
 all:$(NAME)
 
 $(NAME): $(OBJ)
-			@make -C ft_printf
-			@make -C Libft
-			$(CC) $(CFLAGS) $(OBJ) $(INCLUDE) ft_printf/$(PRINTF) Libft/$(LIBFT) -o $(NAME)
+	@echo "\033[33m----Compiling printf----"
+	@make -s -C ft_printf
+	@echo "\033[33m----Compiling lib----"
+	@make -s -C Libft
+	$(CC) $(CFLAGS) $(OBJ) $(INCLUDE) ft_printf/$(PRINTF) Libft/$(LIBFT) -o $(NAME)
+	@echo "\033[32mMinitalk Client Compiled! ᕦ(\033[31m♥\033[32m_\033[31m♥\033[32m)ᕤ\n"
 
 clean:
-	@make clean -C ft_printf
-	@make clean -C Libft
+	@make clean -s -C ft_printf
+	@make clean -s -C Libft
 	$(RM)	$(OBJ)
+	@echo "\n\033[31mDeleting (almost) EVERYTHING! ⌐(ಠ۾ಠ)¬\n"
 
 fclean: clean
-	@make clean -C ft_printf
-	@make clean -C Libft
+	@make clean -s -C ft_printf
+	@make clean -s -C Libft
 	$(RM)	$(NAME)
 	$(RM)	ft_printf/$(PRINTF)
 	$(RM)	Libft/$(LIBFT)
+	@echo "\n\033[31mDeleting EVERYTHING! ⌐(ಠ۾ಠ)¬\n"
 
 re:	fclean	all
+
+party:
+	@printf "\033c"
+	@echo "\n\033[35m♪┏(・o･)┛♪"
+	@sleep 1
+	@printf "\033c"
+	@echo "\033[1;33m♪┗(・o･)┓♪"
+	@sleep 1
+	@printf "\033c"
+	@echo "\n\033[36m♪┏(・o･)┛♪"
+	@sleep 1
+	@printf "\033c"
+	@echo "\033[34m♪┗(・o･)┓♪\n"
 
 .PHONY: all clean fclean re
