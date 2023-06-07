@@ -5,21 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/07 11:49:26 by daguiar-          #+#    #+#             */
-/*   Updated: 2023/06/07 11:50:27 by daguiar-         ###   ########.fr       */
+/*   Created: 2023/04/26 14:13:22 by daguiar-          #+#    #+#             */
+/*   Updated: 2023/06/07 11:33:58 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/minitalk.h"
 
-void	send_bits(int pid, char i)
+static void	confirm(int signal)
 {
-	int	bit;
+	if (signal == SIGUSR1)
+		ft_printf("\033[0;32mReceived!\033[0;32m\n", 1);
+	else
+		ft_printf("\033[0;32mReceived!\033[0;32m\n", 1);
+}
+
+void	send_bits(int pid, char c)
+{
+	int		bit;
 
 	bit = 0;
 	while (bit < 8)
 	{
-		if ((i & (0x01 << bit)) != 0)
+		if ((c & (0x01 << bit)) != 0)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
@@ -28,21 +36,36 @@ void	send_bits(int pid, char i)
 	}
 }
 
-int	main(int argc, char **argv)
+int	pid_check(char *pid)
 {
-	int	pid;
 	int	i;
 
 	i = 0;
-	if (argc == 3)
+	while (pid[i])
+		if (!ft_isdigit(pid[i++]))
+			return (0);
+	return (1);
+}
+
+int	main(int ac, char **av)
+{
+	int	i;
+
+	if (!pid_check(av[1]))
 	{
-		pid = ft_atoi(argv[1]);
-		while (argv[2][i] != '\0')
+		ft_printf("Invalid PID.\n");
+		return (1);
+	}
+	i = 0;
+	if (ac == 3)
+	{
+		while (av[2][i] != '\0')
 		{
-			send_bits(pid, argv[2][i]);
-			i++;
+			signal(SIGUSR1, confirm);
+			signal(SIGUSR2, confirm);
+			send_bits(ft_atoi(av[1]), av[2][i++]);
 		}
-		send_bits(pid, '\n');
+		send_bits(ft_atoi(av[1]), '\n');
 	}
 	else
 	{
