@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:04:08 by daguiar-          #+#    #+#             */
-/*   Updated: 2023/06/05 17:40:59 by daguiar-         ###   ########.fr       */
+/*   Updated: 2023/06/13 17:03:18 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	int_limits(int ac, char **av)
 
 	i = 0;
 	while (++i < ac)
-		if (ft_atoi(av[i]) < -2147483647 || ft_atoi(av[i]) > 2147483647)
+		if (ft_atoi(av[i]) < -2147483648 || ft_atoi(av[i]) > 2147483647)
 			return (0);
 	return (1);
 }
@@ -88,11 +88,13 @@ int	int_limits(int ac, char **av)
 void	errors_handler(int ac, char **av)
 {
 	if (!duplicated_numbers(ac, av))
-		exit(write(2, "Duplicated numbers not allowed!", 31));
+		exit(write(2, "Error\n", 6));
 	if (!valid_numbers(ac, av))
-		exit(write(2, "Something other than numbers or - inserted!", 43));
+		exit(write(2, "Error\n", 6));
 	if (!minus_check(ac, av))
-		exit(write(2, "Too many/only/wrongly placed minus inserted!", 44));
+		exit(write(2, "Error\n", 6));
 	if (!int_limits(ac, av))
-		exit(write(2, "Number/s bigger or smaller than int limts!", 42));
+		exit(write(2, "Error\n", 6));
+	if (ac < 3)
+		exit(1);
 }

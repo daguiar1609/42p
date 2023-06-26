@@ -6,7 +6,7 @@
 /*   By: daguiar- <daguiar-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 19:17:32 by daguiar-          #+#    #+#             */
-/*   Updated: 2023/06/05 17:40:44 by daguiar-         ###   ########.fr       */
+/*   Updated: 2023/06/13 17:40:21 by daguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int	main(int ac, char **av)
 	t_list	**stack_a;
 	t_list	**stack_b;
 
-	if (ac < 3)
-		exit(write(2, "Not enough numbers!\n", 20));
+	if (ac < 2)
+		return (1);
 	errors_handler(ac, av);
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	stack_b = (t_list **)malloc(sizeof(t_list));
