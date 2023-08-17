@@ -1,21 +1,19 @@
-SRCS	= ${wildcard map_check.c} ${wildcard ft_printf/*.c} ${wildcard get_next_line/get_next_line.c} ${wildcard get_next_line/get_next_line_utils.c}
+NAME = test
+SRC_PATH = src/
+SRC_FILES = test.c window.c
+SRC = $(addprefix $(SRC_PATH), $(SRC_FILES))
+OBJ = $(SRC:.c=.o)
 
-NAME = so_long
-
-OBJS =${SRCS:.c=.o}
 CC = cc
-CFLAGS = -g
+RM = rm -rf
+CFLAGS = -Wall -Werror -Wextra
+INCLUDE = -I include
+MLX = -Imlx_linux
 
-all: ${NAME}
+all: $(NAME)
 
-${NAME}: ${OBJS}
-	@${CC} ${CFLAGS} ${OBJS} -o ${NAME}
+%.o: %.c
+	$(CC) $(CFLAGS) $(INCLUDE) $(MLX) -O3 -c $< -o $@
 
-clean: 
-	@rm -rf ${OBJS}
-fclean: clean
-	@rm -rf ${NAME}
-
-fclean_all: fclean
-
-re:fclean ${NAME}
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib $(MLX) -lXext -lX11 -lm -lz -o $(NAME)
